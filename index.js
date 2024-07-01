@@ -40,7 +40,7 @@ app.use(require("./src/middlewares/findSearchSortPagi"));
                  Routes
 ------------------------------------------------------- */
 app.all("/", (req, res) => {
-  res.send("<h1>Welcome to Personal API</h1>");
+  res.send("<h1>Welcome to Personnel API</h1>");
 });
 
 app.use("/departments", require("./src/routes/department.router"));
