@@ -11,27 +11,32 @@ module.exports = {
     res.status(200).send({
       error: false,
       detail: await res.getModelListDetails(Personnel),
-      results: data.length,
+      data: data.length,
       data,
     });
   },
   create: async (req, res) => {
     const isLead = req.body?.isLead || false;
+    let message = "Yeni personel eklendi";
     if (isLead) {
-      await Personnel.updateMany(
+      const isUpdated = await Personnel.updateMany(
         {
           departmentId: req.body.departmentId,
           isLead: true,
         },
         { isLead: false }
       );
-    }
+      if (isUpdated.modifiedCount) {
+        message = "Onceki Leadler kaldirildi! Yeni personel eklendi.";
+      }
+    } //* Her bir takimin tek bir lideri olmak zorunda
 
     const data = await Personnel.create(req.body);
 
     res.status(201).send({
       error: false,
       data,
+      message,
     });
   },
   read: async (req, res) => {
