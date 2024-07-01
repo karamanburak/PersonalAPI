@@ -33,7 +33,7 @@ module.exports = {
   },
   update: async (req, res) => {
     const data = await Department.updateOne({ _id: req.params.id }, req.body, {
-      runValidators: true,
+      runValidators: true, //* modelde var olan validate fonksiyonlarinin update islemi sirasinda calismasini saglayan özelliktir.!
     });
     req.status(202).send({
       error: false,
