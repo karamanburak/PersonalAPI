@@ -50,15 +50,22 @@ module.exports = {
     });
   },
   personnels: async (req, res) => {
-    const Personnel = required("../models/personnel.model");
-    const data = await res.getModelList(Personnel, {
-      departmentId: req.params.id,
-    });
-    res.staus(200).send({
+    const Personnel = require("../models/personnel.model");
+
+    const data = await res.getModelList(
+      Personnel,
+      {
+        departmentId: req.params.id,
+      },
+      "departmentId"
+    );
+
+    res.status(200).send({
       error: false,
-      details: await res.getModelListDetails(Personnel, {
+      detail: await res.getModelListDetails(Personnel, {
         departmentId: req.params.id,
       }),
+      results: data.length,
       data,
     });
   },
