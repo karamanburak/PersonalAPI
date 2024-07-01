@@ -11,11 +11,13 @@ const idValidation = require("../middlewares/idValidation");
 //* URL : /departments
 
 router.route("/").get(department.list).post(department.create);
+router.route("/:id/personnels").get(department.personnels); //* departmana göre personal listeleme
 router
   .route("/:id")
   .all(idValidation)
   .get(department.read)
   .put(department.update)
+  .patch(department.update)
   .delete(department.delete);
 
 /* ------------------------------------------------------- */

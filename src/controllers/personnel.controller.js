@@ -7,10 +7,11 @@ const Personnel = require("../models/personnel.model");
 
 module.exports = {
   list: async (req, res) => {
-    const data = await res.getModelList(Personnel);
+    const data = await res.getModelList(Personnel, {}, "departmentId");
     res.status(200).send({
       error: false,
       detail: await res.getModelListDetails(Personnel),
+      results: data.length,
       data,
     });
   },
@@ -54,7 +55,7 @@ module.exports = {
       );
     }
     const data = await Personnel.updateOne({ _id: req.params.id }, req.body, {
-      runValidators: true, //* modelde var olan validate fonksiyonlarının(built-in ve custom) update işlemi sırasında çalışmasını sağlayan özellik ***
+      runValidators: true, //* modelde var olan validate fonksiyonlarının(built-in ve custom) update işlemi sırasında çalışmasını sağlayan özellik *** => default off (false)
     });
     res.status(202).send({
       error: false,

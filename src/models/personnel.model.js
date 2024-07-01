@@ -27,7 +27,7 @@ const PersonnelSchema = new mongoose.Schema(
       trim: true,
       set: (password) => passwordEncrypt(password),
     },
-    firtName: {
+    firstName: {
       type: String,
       required: true,
       trim: true,
@@ -86,7 +86,7 @@ const PersonnelSchema = new mongoose.Schema(
     },
   },
   {
-    collation: "personnel",
+    collection: "personnel",
     timestamps: true,
   }
 );

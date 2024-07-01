@@ -46,6 +46,15 @@ app.all("/", (req, res) => {
 app.use("/departments", require("./src/routes/department.router"));
 app.use("/personnels", require("./src/routes/personnel.router"));
 
+//* eslesmeyen routelari yakalar => Not Found sayfasi
+app.use((req, res, next) => {
+  res.status(404).send({
+    error: true,
+    message: "Route not found",
+  });
+  next();
+});
+
 /* ------------------------------------------------------- */
 
 // errorHandler:

@@ -11,6 +11,7 @@ module.exports = {
     res.status(200).send({
       error: false,
       detail: await res.getModelListDetails(Department),
+      results: data.length,
       // departments,
       data,
     });
@@ -45,6 +46,19 @@ module.exports = {
     const data = await Department.deleteOne({ _id: req.params.id });
     res.status(data.deletedCount > 0 ? 204 : 404).send({
       error: !data.deletedCount,
+      data,
+    });
+  },
+  personnels: async (req, res) => {
+    const Personnel = required("../models/personnel.model");
+    const data = await res.getModelList(Personnel, {
+      departmentId: req.params.id,
+    });
+    res.staus(200).send({
+      error: false,
+      details: await res.getModelListDetails(Personnel, {
+        departmentId: req.params.id,
+      }),
       data,
     });
   },
