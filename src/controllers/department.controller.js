@@ -26,7 +26,7 @@ module.exports = {
   read: async (req, res) => {
     // const data = await Department.findById(req.params.id); //* findById arka planda findOne methodunu calistirir.
     const data = await Department.findOne({ _id: req.params.id });
-    req.status(200).send({
+    res.status(200).send({
       error: false,
       data,
     });
@@ -35,7 +35,7 @@ module.exports = {
     const data = await Department.updateOne({ _id: req.params.id }, req.body, {
       runValidators: true, //* modelde var olan validate fonksiyonlarinin update islemi sirasinda calismasini saglayan özelliktir.!
     });
-    req.status(202).send({
+    res.status(202).send({
       error: false,
       data,
       newData: await Department.findOne({ _id: req.params.id }),
@@ -43,7 +43,7 @@ module.exports = {
   },
   delete: async (req, res) => {
     const data = await Department.deleteOne({ _id: req.params.id });
-    req.status(data.deletedCount > 0 ? 204 : 404).send({
+    res.status(data.deletedCount > 0 ? 204 : 404).send({
       error: !data.deletedCount,
       data,
     });
