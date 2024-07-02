@@ -4,6 +4,7 @@ EXPRESS - Personnel API
 ------------------------------------------------------- */
 
 const Personnel = require("../models/personnel.model");
+const Token = require("../models/token.model");
 const passwordEncrypt = require("../helpers/passwordEncrypt");
 
 module.exports = {
@@ -20,7 +21,7 @@ module.exports = {
         if (!tokenData) {
           const tokenKey = passwordEncrypt(user._id + Date.now());
           // console.log(user._id + Date.now());
-          tokenData = await Token.create({ userId: user_id, token: tokenKey });
+          tokenData = await Token.create({ userId: user._id, token: tokenKey });
         }
 
         res.status(200).send({

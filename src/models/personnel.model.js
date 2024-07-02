@@ -42,7 +42,7 @@ const PersonnelSchema = new mongoose.Schema(
       required: true,
       trim: true,
       unique: true,
-      unique: true,
+      // unique: true,
     },
     email: {
       type: String,

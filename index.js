@@ -43,7 +43,7 @@ app.all("/", (req, res) => {
   res.send("<h1>Welcome to Personnel API</h1>");
 });
 
-console.log(Date.now());
+// console.log(Date.now());
 
 // app.use("/departments", require("./src/routes/department.router"));
 // app.use("/personnels", require("./src/routes/personnel.router"));
@@ -70,3 +70,5 @@ app.use(require("./src/middlewares/errorHandler"));
 app.listen(PORT, () => console.log("http://127.0.0.1:" + PORT));
 
 /* ------------------------------------------------------- */
+
+// require("./src/helpers/sync")();
