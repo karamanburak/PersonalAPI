@@ -48,7 +48,6 @@ app.all("/", (req, res) => {
     user: req.user,
   });
 });
-
 // console.log(Date.now());
 
 // app.use("/departments", require("./src/routes/department.router"));

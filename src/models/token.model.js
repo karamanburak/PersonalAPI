@@ -13,6 +13,7 @@ const TokenSchema = new mongoose.Schema(
       ref: "Personnel",
       required: true,
       index: true,
+      unique: true,
     },
     token: {
       type: String,
@@ -23,7 +24,7 @@ const TokenSchema = new mongoose.Schema(
     },
   },
   {
-    collection: "token",
+    collection: "tokens",
     timestamps: true,
   }
 );
