@@ -43,8 +43,14 @@ app.all("/", (req, res) => {
   res.send("<h1>Welcome to Personnel API</h1>");
 });
 
-app.use("/departments", require("./src/routes/department.router"));
-app.use("/personnels", require("./src/routes/personnel.router"));
+console.log(Date.now());
+
+// app.use("/departments", require("./src/routes/department.router"));
+// app.use("/personnels", require("./src/routes/personnel.router"));
+// app.use("/tokens", require("./src/routes/token.router"));
+
+// app.use(require("./src/routes/index"));
+app.use(require("./src/routes/"));
 
 //* eslesmeyen routelari yakalar => Not Found sayfasi
 app.use((req, res, next) => {
