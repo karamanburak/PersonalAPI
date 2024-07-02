@@ -42,7 +42,11 @@ app.use(require("./src/middlewares/findSearchSortPagi"));
                  Routes
 ------------------------------------------------------- */
 app.all("/", (req, res) => {
-  res.send("<h1>Welcome to Personnel API</h1>");
+  // res.send("Welcome to the Personnel API")
+  res.send({
+    message: "Welcome to the Personnel API",
+    user: req.user,
+  });
 });
 
 // console.log(Date.now());
@@ -60,7 +64,6 @@ app.use((req, res, next) => {
     error: true,
     message: "Route not found",
   });
-  next();
 });
 
 /* ------------------------------------------------------- */
