@@ -383,6 +383,36 @@
           }
         }
       }
+    },
+    "/documents/json": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/documents/redoc": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
+    },
+    "/documents/swagger": {
+      "get": {
+        "description": "",
+        "responses": {
+          "default": {
+            "description": ""
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -671,7 +701,7 @@
             },
             "default": {
               "type": "number",
-              "example": 1720086141310
+              "example": 1720087409983
             }
           }
         }
