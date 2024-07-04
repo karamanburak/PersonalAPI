@@ -212,6 +212,10 @@
     },
     "/personnels/": {
       "get": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "List Personnels",
         "description": "",
         "responses": {
           "200": {
@@ -220,16 +224,22 @@
         }
       },
       "post": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Create Personnel",
         "description": "",
         "parameters": [
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "departmentId": {
-                  "example": "any"
+                "name": {
+                  "type": "string",
+                  "example": "Test Personnel"
                 }
               }
             }
@@ -244,6 +254,10 @@
     },
     "/personnels/{id}": {
       "get": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Get Single Personnel",
         "description": "",
         "parameters": [
           {
@@ -260,6 +274,10 @@
         }
       },
       "put": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Update Personnel",
         "description": "",
         "parameters": [
           {
@@ -271,26 +289,13 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "isAdmin": {
-                  "example": "any"
-                },
-                "req": {
-                  "example": "any"
-                },
-                "salary": {
-                  "example": "any"
-                },
-                "title": {
-                  "example": "any"
-                },
-                "startedAt": {
-                  "example": "any"
-                },
-                "isActive": {
-                  "example": "any"
+                "name": {
+                  "type": "string",
+                  "example": "Test Personnel"
                 }
               }
             }
@@ -303,6 +308,10 @@
         }
       },
       "delete": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Delete Personnel",
         "description": "",
         "parameters": [
           {
@@ -322,6 +331,10 @@
         }
       },
       "patch": {
+        "tags": [
+          "Personnels"
+        ],
+        "summary": "Update Personnel",
         "description": "",
         "parameters": [
           {
@@ -333,116 +346,16 @@
           {
             "name": "body",
             "in": "body",
+            "required": true,
             "schema": {
               "type": "object",
               "properties": {
-                "isAdmin": {
-                  "example": "any"
-                },
-                "req": {
-                  "example": "any"
-                },
-                "salary": {
-                  "example": "any"
-                },
-                "title": {
-                  "example": "any"
-                },
-                "startedAt": {
-                  "example": "any"
-                },
-                "isActive": {
-                  "example": "any"
+                "name": {
+                  "type": "string",
+                  "example": "Test Personnel"
                 }
               }
             }
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted"
-          }
-        }
-      }
-    },
-    "/tokens/": {
-      "get": {
-        "description": "",
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "post": {
-        "description": "",
-        "responses": {
-          "201": {
-            "description": "Created"
-          }
-        }
-      }
-    },
-    "/tokens/{id}": {
-      "get": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "OK"
-          }
-        }
-      },
-      "put": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "202": {
-            "description": "Accepted"
-          }
-        }
-      },
-      "delete": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
-          }
-        ],
-        "responses": {
-          "204": {
-            "description": "No Content"
-          },
-          "404": {
-            "description": "Not Found"
-          }
-        }
-      },
-      "patch": {
-        "description": "",
-        "parameters": [
-          {
-            "name": "id",
-            "in": "path",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -739,7 +652,7 @@
             },
             "default": {
               "type": "number",
-              "example": 1720084571074
+              "example": 1720085084533
             }
           }
         }

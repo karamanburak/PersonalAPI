@@ -7,6 +7,10 @@ const Personnel = require("../models/personnel.model");
 
 module.exports = {
   list: async (req, res) => {
+    /*
+      #swagger.tags = ["Personnels"]
+      #swagger.summary = "List Personnels"
+    */
     const data = await res.getModelList(Personnel, {}, "departmentId");
     res.status(200).send({
       error: false,
@@ -16,6 +20,17 @@ module.exports = {
     });
   },
   create: async (req, res) => {
+    /*
+      #swagger.tags = ["Personnels"]
+      #swagger.summary = "Create Personnel"
+      #swagger.parameters["body"] = {
+      in: "body",
+      required : true,
+      schema:{
+        name:"Test Personnel"
+        }
+      }
+    */
     const isLead = req.body?.isLead || false;
     let message = "Yeni personel eklendi";
     if (isLead) {
@@ -40,6 +55,11 @@ module.exports = {
     });
   },
   read: async (req, res) => {
+    /*
+      #swagger.tags = ["Personnels"]
+            #swagger.summary = "Get Single Personnel"
+
+    */
     const data = await Personnel.findOne({ _id: req.params.id });
     res.status(200).send({
       error: false,
@@ -47,6 +67,17 @@ module.exports = {
     });
   },
   update: async (req, res) => {
+    /*
+      #swagger.tags = ["Personnels"]
+      #swagger.summary = "Update Personnel"
+      #swagger.parameters["body"] = {
+      in: "body",
+      required : true,
+      schema:{
+        name:"Test Personnel"
+        }
+      }
+    */
     if (!req.user.isAdmin) {
       req.body.isAdmin = false;
       delete req.body.isLead;
@@ -77,6 +108,10 @@ module.exports = {
     });
   },
   delete: async (req, res) => {
+    /*
+      #swagger.tags = ["Personnels"]
+      #swagger.summary = "Delete Personnel"
+    */
     const data = await Personnel.deleteOne({ _id: req.params.id });
 
     res.status(data.deletedCount > 0 ? 204 : 404).send({
