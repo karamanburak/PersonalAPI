@@ -9,6 +9,9 @@ const passwordEncrypt = require("../helpers/passwordEncrypt");
 
 module.exports = {
   login: async (req, res) => {
+    /*
+      #swagger.tags = ["Authorization"]
+    */
     const { username, password } = req.body;
     if (username && password) {
       //? findOne metodu filtreleme yaparken modeldki set fonksiyonlarını çalıştırır. Burada da ek bir işleme ihtiyaç olmadan passwordu modeldeki set metodundaki encrypt i kullanarak işlemden geçirip db'de filtreleme yapar
@@ -39,6 +42,9 @@ module.exports = {
     }
   },
   logout: async (req, res) => {
+    /*
+      #swagger.tags = ["Authorization"]
+    */
     // 1.yöntem (Kısa yöntem)
     // console.log(req.user);
     // const deleted = await Token.deleteOne({ userId: req.user._id }); //* userId unique olduğu için bu yöntem kullanılabilir

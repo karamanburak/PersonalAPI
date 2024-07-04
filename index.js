@@ -95,6 +95,26 @@ app.use(
   })
 );
 
+//? REDOC
+const redoc = require("redoc-express");
+app.use(
+  "/documents/redoc",
+  redoc({
+    title: "Personnel API",
+    specUrl: "/documents/json",
+    // path to your OpenAPI definition
+    definition: {
+      openapi: "3.0.0",
+      info: {
+        title: "Personnel API",
+        version: "1.0.0",
+      },
+      // ... other options
+    },
+    // ... other options
+  })
+);
+
 /* -------------------------------------------------------
                  Middlewares
 ------------------------------------------------------- */

@@ -30,6 +30,9 @@
   "paths": {
     "/auth/login": {
       "post": {
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "parameters": [
           {
@@ -57,6 +60,9 @@
     },
     "/auth/logout": {
       "get": {
+        "tags": [
+          "Authorization"
+        ],
         "description": "",
         "responses": {
           "200": {
@@ -665,7 +671,7 @@
             },
             "default": {
               "type": "number",
-              "example": 1720085804415
+              "example": 1720086141310
             }
           }
         }
