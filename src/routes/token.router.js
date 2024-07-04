@@ -10,6 +10,23 @@ const idValidation = require("../middlewares/idValidation");
 
 //* URL : /tokens
 
+// router
+//   .route("/")
+//   .get(permission.isAdmin, token.list)
+//   .post(permission.isAdmin, token.create);
+
+// router
+//   .route("/:id")
+//   .all(permission.isAdmin, idValidation)
+//   .get(permission.isAdmin, token.read)
+//   .put(permission.isAdmin, token.update)
+//   .patch(permission.isAdmin, token.update)
+//   .delete(permission.isAdmin, token.delete);
+
+const { isAdmin } = require("../middlewares/permissions");
+
+router.use(isAdmin);
+
 router.route("/").get(token.list).post(token.create);
 
 router

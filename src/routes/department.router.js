@@ -15,7 +15,9 @@ router
   .route("/")
   .get(permission.isLogin, department.list)
   .post(permission.isAdmin, department.create);
-router.route("/:id/personnels").get(department.personnels); //* departmana göre personal listeleme
+router
+  .route("/:id/personnels")
+  .get(permission.isAminorLead, department.personnels); //* departmana göre personal listeleme
 router
   .route("/:id")
   .all(idValidation)
