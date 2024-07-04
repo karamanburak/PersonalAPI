@@ -33,7 +33,7 @@ dbConnection();
 // https://github.com/expressjs/morgan
 //? npm i morgan
 
-const morgan = require("morgan");
+// const morgan = require("morgan");
 
 // app.use(morgan("combined"))
 // app.use(morgan("common"))
@@ -44,22 +44,37 @@ const morgan = require("morgan");
 
 //! write logs to a file
 // create a write stream (in append mode)
-const fs = require("node:fs"); //* dosya işlemleri için built-in module
+// const fs = require("node:fs") //* dosya işlemleri için built-in module
 // var accessLogStream = fs.createWriteStream("./access.log", { flags: 'a+' })
 
 // setup the logger
 // app.use(morgan('combined', { stream: accessLogStream }))
-app.use(
-  morgan("combined", {
-    stream: fs.createWriteStream("./access.log", { flags: "a+" }),
-  })
-);
+// app.use(
+//   morgan("combined", {
+//     stream: fs.createWriteStream("./access.log", { flags: "a+" }),
+//   })
+// );
+//! write logs to a file day by day
+// const fs = require("node:fs");
+
+// const now = new Date().toISOString().split("T")[0]
+// console.log(typeof now, now)
+
+// app.use(
+//   morgan("combined", {
+//     stream: fs.createWriteStream(`./logs/${now}.log`, { flags: "a+" }),
+//   })
+// );
+
+/* 
 
 /* -------------------------------------------------------
                  Middlewares
 ------------------------------------------------------- */
 //* accept json
 app.use(express.json());
+
+app.use(require("./src/middlewares/logging"));
 
 //* Filter,Search, Sort, Pagination (res.getModelList)
 app.use(require("./src/middlewares/findSearchSortPagi"));
