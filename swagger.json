@@ -55,6 +55,19 @@
         }
       }
     },
+    "/auth/logout": {
+      "get": {
+        "description": "",
+        "responses": {
+          "200": {
+            "description": "OK"
+          },
+          "400": {
+            "description": "Bad Request"
+          }
+        }
+      }
+    },
     "/departments/": {
       "get": {
         "tags": [
@@ -652,7 +665,7 @@
             },
             "default": {
               "type": "number",
-              "example": 1720085084533
+              "example": 1720085804415
             }
           }
         }
