@@ -42,7 +42,7 @@ const document = {
     license: { name: packageJson.license },
   },
   // host: `${HOST}:${PORT}`,
-  host: `https://personnelapi-06ej.onrender.com`,
+  host: `personnelapi-06ej.onrender.com`,
   basePath: "/",
   schemes: ["http", "https"],
   // SimpleToken Settings:
