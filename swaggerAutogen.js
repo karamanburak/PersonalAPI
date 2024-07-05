@@ -30,7 +30,7 @@ const document = {
   // 	title: "Personnel API",
   // 	description: "Personnel Management API Service",
   // 	termsOfService: "http://www.clarusway.com",
-  // 	contact: { name: "Clarusway", email: "anthony@clarusway.com" },
+  // 	contact: { name: "Clarusway", email: "karaman.buraak@gmail.com" },
   // 	license: { name: "BSD License", },
   // },
   info: {
@@ -41,7 +41,8 @@ const document = {
     contact: { name: packageJson.author, email: "karaman.buraak@gmail.com" },
     license: { name: packageJson.license },
   },
-  host: `${HOST}:${PORT}`,
+  // host: `${HOST}:${PORT}`,
+  host: `https://personnel-api-eight.vercel.app/`,
   basePath: "/",
   schemes: ["http", "https"],
   // SimpleToken Settings:
