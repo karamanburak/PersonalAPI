@@ -26,7 +26,7 @@ const options = {
     "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.0.0/swagger-ui-bundle.js",
     "https://cdnjs.cloudflare.com/ajax/libs/swagger-ui/5.0.0/swagger-ui-standalone-preset.js",
   ],
-};
+}; //* vercel swagger sürümden kaynakli dogrudan cekemiyor. O nedenle cdn linklerini bagladik.
 
 //* URL => /documents
 //* JSON
