@@ -4,28 +4,50 @@
 
 ![ERD](./erdPersonnelAPI.png)
 
-### Folder/File Structure:
+### Personnel API Folder/File Structure:
 
 ```
-    .env
-    .gitignore
-    index.js
-    readme.md
-    src/
-        configs/
-            dbConnection.js
-        controllers/
-            department.controller.js
-            personnel.controller.js
-        helpers/
-            passwordEncrypt.js
-        middlewares/
-            errorHandler.js
-            findSearchSortPage.js
-        models/
-            department.model.js
-            personnel.model.js
-        routes/
-            department.router.js
-            personnel.router.js
+|
+|
+├── logs
+├── src
+|    ├── configs
+|    │   └── dbConnection.js
+|    ├── controllers
+|    │   ├── auth.controller.js
+|    │   ├── department.controller.js
+|    │   ├── personnel.controller.js
+|    │   └── token.controller.js
+|    ├── helpers
+|    │   ├── passwordEncrypt.js
+|    │   └── sync.js
+|    ├── middlewares
+|    │   ├── authentication.js
+|    │   ├── errorHandler.js
+|    │   ├── findSearchSortPagi.js
+|    │   ├── idValidation.js
+|    │   ├── logging.js
+|    │   └── permissions.js
+|    ├── models
+|    │   ├── department.model.js
+|    │   ├── personnel.model.js
+|    │   └── token.model.js
+|    ├── routes
+|    │   ├── auth.router.js
+|    │   ├── department.router.js
+|    │   ├── documents.router.js
+|    │   ├── index.js
+|    │   ├── personnel.router.js
+|    │   └── token.router.js
+|    ├── .env-sample
+|    ├── .gitignore
+|    ├── erdPersonnelAPI.png
+|    ├── index copy.js
+|    ├── index.js
+|    ├── LICENSE
+|    ├── package-lock.json
+|    ├── package.json
+|    ├── README.md
+|    ├── swagger.json
+└──  └── swaggerAutogen.js
 ```
