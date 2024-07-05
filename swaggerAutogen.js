@@ -41,7 +41,8 @@ const document = {
     contact: { name: packageJson.author, email: "karaman.buraak@gmail.com" },
     license: { name: packageJson.license },
   },
-  host: `${HOST}:${PORT}`,
+  // host: `${HOST}:${PORT}`,
+  host: `https://personnelapi-06ej.onrender.com`,
   basePath: "/",
   schemes: ["http", "https"],
   // SimpleToken Settings:
