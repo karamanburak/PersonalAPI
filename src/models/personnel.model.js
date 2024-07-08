@@ -25,7 +25,17 @@ const PersonnelSchema = new mongoose.Schema(
       required: true,
       minlength: 8,
       trim: true,
-      set: (password) => passwordEncrypt(password),
+      set: (password) => {
+        if (
+          /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[!-\*?+&%{}])[A-Za-z\d!-\*?+&%{}]{8,}$/.test(
+            password
+          )
+        ) {
+          return passwordEncrypt(password);
+        } else {
+          throw new CustomError("Password type is incorrect", 400);
+        }
+      },
     },
     firstName: {
       type: String,
