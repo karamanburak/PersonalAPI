@@ -1,5 +1,5 @@
 # PERSONEL API
-
+This API allows for comprehensive management of personnel and departments within an organization. It provides endpoints for user registration, login, department creation and management, as well as personnel management. Below is a detailed guide to each endpoint and its usage.
 ### ERD:
 
 ![ERD](./erdPersonnelAPI.png)
